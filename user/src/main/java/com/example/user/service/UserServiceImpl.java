@@ -15,11 +15,15 @@ public class UserServiceImpl implements UserService{
     @Value("${test}")
     private String user;
 
+    @Value("${test2}")
+    private String user2;
+
     @Override
     public String findUser() {
+        log.info("user  :::  " + user);
+        log.info("user2 :::  " + user2);
 
-
-        return user;
+        return "ok";
     }
 
 }
