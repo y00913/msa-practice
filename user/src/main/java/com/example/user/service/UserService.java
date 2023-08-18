@@ -4,5 +4,6 @@ public interface UserService {
 
     String findUser();
     void saveUser();
+    void updateUser();
 
 }
