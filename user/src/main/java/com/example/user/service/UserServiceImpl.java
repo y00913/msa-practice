@@ -26,4 +26,9 @@ public class UserServiceImpl implements UserService{
         return "ok";
     }
 
+    @Override
+    public void saveUser() {
+        
+    }
+
 }
