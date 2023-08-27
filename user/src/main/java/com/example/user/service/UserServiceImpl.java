@@ -7,6 +7,9 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Primary
 @Service
 @Slf4j
@@ -21,11 +24,16 @@ public class UserServiceImpl implements UserService{
     private String user2;
 
     @Override
-    public String findUser() {
+    public Object findUser() {
         log.info("user  :::  " + user);
         log.info("user2 :::  " + user2);
 
-        return "ok";
+        Map<String, String> map = new HashMap<>();
+
+        map.put("user", user);
+        map.put("user2", user2);
+
+        return map;
     }
 
     @Override
