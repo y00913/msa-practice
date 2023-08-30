@@ -19,9 +19,9 @@ public class UserController {
         return userService.findUser();
     }
 
-    @PostMapping("/user")
-    public String saveUser() {
-        userService.saveUser();
+    @GetMapping("/user2")
+    public String saveUser(String id, String pw) {
+        userService.saveUser(id, pw);
 
         return "save user";
     }
