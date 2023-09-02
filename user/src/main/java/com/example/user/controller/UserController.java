@@ -2,10 +2,9 @@ package com.example.user.controller;
 
 import com.example.user.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/v1")
@@ -19,9 +18,9 @@ public class UserController {
         return userService.findUser();
     }
 
-    @GetMapping("/user2")
-    public String saveUser(String id, String pw) {
-        userService.saveUser(id, pw);
+    @PostMapping("/user2")
+    public String saveUser(@RequestBody Map<String, String> u) {
+        userService.saveUser(u);
 
         return "save user";
     }

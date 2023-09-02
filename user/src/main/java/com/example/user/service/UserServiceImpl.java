@@ -37,9 +37,9 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void saveUser(String id, String pw) {
-        log.info(" -------- " + id);
-        log.info(" -------- " + pw);
+    public void saveUser(Map<String, String> u) {
+        log.info(" -------- " + u.get("id"));
+        log.info(" -------- " + u.get("pw"));
     }
 
     @Override

@@ -1,9 +1,11 @@
 package com.example.user.service;
 
+import java.util.Map;
+
 public interface UserService {
 
     Object findUser();
-    void saveUser(String id, String pw);
+    void saveUser(Map<String, String> u);
     void updateUser();
 
 }
